@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import {Link} from "react-router-dom"
 export const Container = styled.div`
 
 background: #0A0A10;
@@ -70,44 +70,56 @@ color: #FFFFFF;
 
 
 `
-export const Button = styled.button`
+// export const Button = styled(Link)`
 
+// width: 342px;
+// height: 68px;
+// margin-top: 76px;
+// background: #D93856;
+
+// font-style: normal;
+// font-weight: 900;
+// font-size: 17px;
+// line-height: 2px;
+
+// align-items: center;
+// text-align: center;
+
+// color: #FFFFFF;
+
+// cursor: pointer;
+// &:hover{
+// opacity: 0.8;
+// }
+// &:active{
+// opacity: 0.5;
+// }
+// `
+
+export const Button = styled(Link)`
+background: #D93856;
+border-radius: 14px;
 width: 342px;
 height: 68px;
-margin-top: 76px;
-background: #D93856;
+border: none;
 
 font-style: normal;
 font-weight: 900;
 font-size: 17px;
-line-height: 2px;
-
-align-items: center;
-text-align: center;
-
-color: #FFFFFF;
-
+line-height: 2px; 
+color: white;
 cursor: pointer;
-`
-export const Order = styled.li`
-    
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 14px;
-    width: 342px;
-    height: 58px;
-    color: #FFFFFF;
-
-    button{
-      background: transparent;
-      border:none;
-      cursor: pointer;
-    }
-    
-
-`
-
-
+margin-top: 130px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
+text-decoration: none;
+&:hover{
+    opacity: 0.8;
+}
+&:active{
+    opacity: 0.5;
+}
+`;
+   
