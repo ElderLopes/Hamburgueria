@@ -19,20 +19,12 @@ const Orders = () => {
   const inputPedido = useRef()
   const inputName = useRef()
 
-  // async function addNewOrder() {
-  //   const { data: newOrder } = await axios.post("http://localhost:3001/order", {
-  //     order: inputPedido.current.value,
-  //     clientName: inputName.current.value
-  //   });
-  //   setOrder([...order, newOrder])
-
-
-  // }
+ 
   async function addNewOrder() {
     const orderValue = inputPedido.current?.value;
     const clientNameValue = inputName.current?.value;
     if (!orderValue || !clientNameValue) {
-      // lidar com o erro
+     
       return;
     }
     const { data: newOrder } = await axios.post("http://localhost:3001/order", {
