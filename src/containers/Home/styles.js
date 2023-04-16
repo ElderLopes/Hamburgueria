@@ -65,36 +65,11 @@ font-style: normal;
 font-weight: 300;
 font-size: 18px;
 line-height: 21px;
-
+text-transform: uppercase;
 color: #FFFFFF;
 
 
 `
-// export const Button = styled(Link)`
-
-// width: 342px;
-// height: 68px;
-// margin-top: 76px;
-// background: #D93856;
-
-// font-style: normal;
-// font-weight: 900;
-// font-size: 17px;
-// line-height: 2px;
-
-// align-items: center;
-// text-align: center;
-
-// color: #FFFFFF;
-
-// cursor: pointer;
-// &:hover{
-// opacity: 0.8;
-// }
-// &:active{
-// opacity: 0.5;
-// }
-// `
 
 export const Button = styled(Link)`
 background: #D93856;

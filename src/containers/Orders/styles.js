@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
+
 export const Container = styled.div`
 
 background: #0A0A10;
@@ -13,26 +14,16 @@ min-height: 100vh;
 
 `
 export const Image = styled.img`
-
 margin-top: 10px;
-
-
 `
-
-
 export const H1 = styled.h1`
 font-style: normal;
 font-weight: 700;
 font-size: 28px;
 line-height: 33px;
-
 text-align: left;
-
 color: #FFFFFF;
-
-
 `
-
 export const DivCaixa = styled.div`
     
   button {
@@ -46,18 +37,25 @@ export const DivCaixa = styled.div`
       width: 20px;
       height: 20px;
       color: black;
+    
     }
-  
 `
-
 export const ContainerOrder = styled.li`
-        display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 14px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
     width: 342px;
-  
+    height: 101px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    flex-grow: 0;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+   
     p{
       font-style: normal;
       font-weight: 300;
@@ -65,7 +63,8 @@ export const ContainerOrder = styled.li`
       line-height: 21px;
       color: #FFFFFF;
       margin-left: 15px;
-      order:1
+      order:2;
+      text-transform: uppercase;
     }
 
   .pName {
@@ -76,14 +75,15 @@ line-height: 21px;
 color: #FFFFFF;
 margin-left: 20px;
 margin-left: 15px;
-order:2
+order:1;
+text-transform: uppercase;
   }
-    div{
-      display: flex;
-    flex-direction: row-reverse;
-    }
+  button{
+    background: none;
+    border: none;
+  }
+    
 `
-
 export const Button = styled(Link)`
 
 background: rgba(255, 255, 255, 0.14);
@@ -111,3 +111,9 @@ text-decoration: none;
     opacity: 0.5;
 }
 `
+export const ContainerItens2 = styled.div`
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap:10px;
+`;

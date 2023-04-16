@@ -8,8 +8,9 @@ import {
   H1,
   Button,
   ContainerOrder,
-  DivCaixa,
- 
+  ContainerItens2,
+
+
 } from "./styles";
 
 const Orders = () => {
@@ -18,16 +19,29 @@ const Orders = () => {
   const inputPedido = useRef()
   const inputName = useRef()
 
+  // async function addNewOrder() {
+  //   const { data: newOrder } = await axios.post("http://localhost:3001/order", {
+  //     order: inputPedido.current.value,
+  //     clientName: inputName.current.value
+  //   });
+  //   setOrder([...order, newOrder])
+
+
+  // }
   async function addNewOrder() {
+    const orderValue = inputPedido.current?.value;
+    const clientNameValue = inputName.current?.value;
+    if (!orderValue || !clientNameValue) {
+      // lidar com o erro
+      return;
+    }
     const { data: newOrder } = await axios.post("http://localhost:3001/order", {
-      order: inputPedido.current.value,
-      clientName: inputName.current.value
+      order: orderValue,
+      clientName: clientNameValue,
     });
-    setOrder([...order, newOrder])
-
-
+    setOrder([...order, newOrder]);
   }
-
+  
   useEffect(() => {
     async function fetchOrder() {
       const { data: newOrder } = await axios.get("http://localhost:3001/order")
@@ -47,24 +61,20 @@ const Orders = () => {
     <Container>
       <Image alt='Logo-Hamburgueria' src={Pedido} />
       <H1>Pedidos</H1>
+      <ul>
 
-      <DivCaixa>
-    
-          {order.map(order => (
-            <ContainerOrder key={order.id}>
+        {order.map(order => (
+          <ContainerOrder key={order.id}>
+            <ContainerItens2>
               <p>{order.order}</p>
               <p className="pName">{order.clientName}</p>
-              <div>
-              <button  onClick={() => deleteOrder(order.id)}>
-                <img alt="imagem-delete" src={Trash} />
-              </button>
-              </div>
-           </ContainerOrder>
-          ))}
-       
+            </ContainerItens2>
+            <button onClick={() => deleteOrder(order.id)} className='Trash'><img src={Trash} alt="trash" /></button>
+          </ContainerOrder>
+        ))
+        }
 
-      </DivCaixa>
-
+      </ul>
 
       <Button to="/" onClick={addNewOrder}>Home</Button>
     </Container>
