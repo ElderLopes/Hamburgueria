@@ -91,7 +91,7 @@ border-radius: 14px;
 width: 342px;
 height: 68px;
 border: none;
-
+margin-left: 35px;
 font-style: normal;
 font-weight: 900;
 font-size: 17px;
